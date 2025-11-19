@@ -1,0 +1,61 @@
+STRUKTUR FOLDER APLIKASI WORDLY
+================================
+
+worldly/
+├── backend/
+│   ├── package.json
+│   ├── server.js
+│   ├── schema.sql
+│   ├── .env.example
+│   └── .env (buat sendiri dari .env.example)
+├── src/
+│   ├── components/
+│   │   ├── WordForm.tsx
+│   │   └── WordCloud.tsx
+│   ├── styles/
+│   │   ├── WordForm.css
+│   │   └── WordCloud.css
+│   ├── App.tsx
+│   ├── App.css
+│   ├── main.tsx
+│   └── index.css
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── index.html
+
+
+CARA MENJALANKAN APLIKASI
+=========================
+
+1. SETUP DATABASE MySQL
+   - Buka MySQL client/workbench
+   - Jalankan query dari file: backend/schema.sql
+   - Database 'wordly' akan terbuat dengan tabel 'inputs'
+
+2. SETUP BACKEND
+   - Buka terminal di folder backend/
+   - Copy .env.example ke .env
+   - Edit .env sesuai konfigurasi MySQL Anda
+   - Jalankan: npm install
+   - Jalankan: npm run dev
+   - Backend akan berjalan di http://localhost:5000
+
+3. SETUP FRONTEND
+   - Buka terminal di folder root (worldly/)
+   - Jalankan: npm install
+   - Jalankan: npm run dev
+   - Frontend akan berjalan di http://localhost:5173
+
+4. AKSES APLIKASI
+   - Buka browser ke http://localhost:5173
+   - Masukkan kata Anda
+   - Lihat wordcloud yang terupdate setiap 5 detik
+
+FITUR UTAMA
+===========
+- User bisa input satu kata per hari (berdasarkan IP)
+- Jika sudah input hari ini, akan ditolak dengan pesan error
+- Wordcloud menampilkan semua kata hari ini
+- Ukuran kata sesuai dengan frekuensi kemunculannya
+- Wordcloud terupdate otomatis setiap 5 detik
