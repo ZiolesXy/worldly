@@ -38,17 +38,13 @@ export default function WordCloud({ data }: WordCloudProps) {
 
     sortedData.forEach((item, index) => {
       const sizeRatio = (item.value - minValue) / (maxValue - minValue)
-      const fontSize = 16 + sizeRatio * 40
+      const fontSize = 14 + sizeRatio * 32
 
       const span = document.createElement('span')
       span.textContent = item.text
+      span.className = 'word-item'
       span.style.fontSize = `${fontSize}px`
       span.style.color = colors[index % colors.length]
-      span.style.fontWeight = 'bold'
-      span.style.margin = '8px'
-      span.style.display = 'inline-block'
-      span.style.padding = '4px 8px'
-      span.style.cursor = 'default'
 
       containerRef.current?.appendChild(span)
     })
