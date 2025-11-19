@@ -3,12 +3,19 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 40px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #f3e8ff 100%);
-  border-radius: 12px;
-  min-height: 320px;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 8px;
+  min-height: 300px;
   flex: 1;
+}
+
+.word-cloud-empty {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .word-cloud-svg {
@@ -17,19 +24,25 @@
 }
 
 .word-item {
-  padding: 8px 16px;
+  padding: 0.625rem 1.25rem;
   border-radius: 20px;
   font-weight: 700;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
+  transition: all 0.2s ease;
+  cursor: pointer;
   user-select: none;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .word-item:hover {
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.word-item:active {
+  transform: scale(1.05);
 }

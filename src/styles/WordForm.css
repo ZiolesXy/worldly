@@ -1,60 +1,77 @@
 .word-form {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.word-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.word-form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.word-form-hint {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
 }
 
 .word-input {
-  flex: 1;
-  padding: 16px 20px;
-  font-size: 16px;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
   font-weight: 500;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: #f9fafb;
-  color: #1f2937;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: inherit;
 }
 
 .word-input::placeholder {
-  color: #9ca3af;
-  font-weight: 500;
+  color: var(--text-tertiary);
+  font-weight: 400;
 }
 
 .word-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: var(--primary);
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .word-input:disabled {
-  background-color: #f3f4f6;
+  background-color: var(--bg-tertiary);
   cursor: not-allowed;
-  color: #9ca3af;
+  color: var(--text-tertiary);
+  opacity: 0.6;
 }
 
 .submit-btn {
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  padding: 0.875rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--primary);
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
   font-family: inherit;
+  letter-spacing: 0.3px;
 }
 
 .submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .submit-btn:active:not(:disabled) {
@@ -62,7 +79,7 @@
 }
 
 .submit-btn:disabled {
-  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  background: var(--text-tertiary);
   cursor: not-allowed;
-  box-shadow: none;
+  opacity: 0.5;
 }

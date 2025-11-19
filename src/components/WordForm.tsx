@@ -21,17 +21,27 @@ export default function WordForm({ onSubmit }: WordFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="word-form">
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Masukkan satu kata..."
-        disabled={loading}
-        maxLength={50}
-        className="word-input"
-      />
+      <div className="word-form-group">
+        <label htmlFor="word-input" className="word-form-label">
+          Kata Anda
+        </label>
+        <input
+          id="word-input"
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ketik kata yang bermakna..."
+          disabled={loading}
+          maxLength={50}
+          className="word-input"
+          autoFocus
+        />
+        <div className="word-form-hint">
+          {input.length}/50 karakter
+        </div>
+      </div>
       <button type="submit" disabled={loading} className="submit-btn">
-        {loading ? 'Mengirim...' : 'Kirim'}
+        {loading ? '⏳ Mengirim...' : '✓ Bagikan Kata'}
       </button>
     </form>
   )

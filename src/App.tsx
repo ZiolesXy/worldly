@@ -58,24 +58,50 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Wordly Cloud</h1>
-        <p>Bagikan satu kata Anda hari ini</p>
+        <div className="app-header-content">
+          <div>
+            <h1>✨ Wordly</h1>
+            <p>Bagikan kata Anda, lihat dunia berbicara</p>
+          </div>
+          <nav className="header-nav">
+            <a href="#" className="nav-link">Dashboard</a>
+            <a href="#" className="nav-link">Tentang</a>
+          </nav>
+        </div>
       </header>
 
       <main className="app-main">
         <div className="form-section">
-          <WordForm onSubmit={handleSubmit} />
-          {error && <div className="error-message">{error}</div>}
-          {success && <div className="success-message">{success}</div>}
+          <div className="card">
+            <div className="card-header">
+              <h2>Bagikan Kata Anda</h2>
+              <p>Tambahkan kata yang bermakna untuk Anda hari ini</p>
+            </div>
+            <div className="card-body">
+              <WordForm onSubmit={handleSubmit} />
+              {error && <div className="message message-error">{error}</div>}
+              {success && <div className="message message-success">{success}</div>}
+            </div>
+          </div>
         </div>
 
         <div className="cloud-section">
-          <h2>Kata-kata Hari Ini</h2>
-          {words.length > 0 ? (
-            <WordCloud data={words} />
-          ) : (
-            <p className="no-words">Belum ada kata hari ini</p>
-          )}
+          <div className="card">
+            <div className="card-header">
+              <h2>Kata-kata Hari Ini</h2>
+              <p>Lihat apa yang dibagikan komunitas</p>
+            </div>
+            <div className="card-body">
+              {words.length > 0 ? (
+                <WordCloud data={words} />
+              ) : (
+                <div className="no-data">
+                  <div className="no-data-icon">📝</div>
+                  <div className="no-data-text">Belum ada kata hari ini</div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </main>
     </div>
